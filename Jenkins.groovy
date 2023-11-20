@@ -39,6 +39,7 @@ pipeline {
             steps {
                 dir('git_repo') {
                     sh 'git branch'
+                    sh 'git status'
                     sh '''
                         git push origin release
                     '''
