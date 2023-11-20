@@ -1,0 +1,22 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Checkout') {
+            steps {
+                checkout scm
+            }
+        }
+
+        stage('Run Python Script') {
+            steps {
+                script {
+                    sh 'pip install -r requirements.txt'
+
+
+                    sh 'python test_cases.py'
+                }
+            }
+        }
+    }
+}
