@@ -1,3 +1,2 @@
-# from conftest import db_connection
 import pymssql
 import pytest
