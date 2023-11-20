@@ -40,7 +40,7 @@ pipeline {
                 dir('git_repo') {
                     sh "git checkout release" // Create and switch to 'release' branch
                     sh "git add ." // Stage changes
-                    sh "git commit -m 'Add test results'" // Commit changes
+                    //sh "git commit -m 'Add test results'" // Commit changes
                     sh "git push origin release" // Push changes to 'release' branch
                 }
             }
