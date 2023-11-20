@@ -4,8 +4,7 @@ import pytest
 
 @pytest.fixture(scope='session')  # Please verify database credentials
 def db_conn():
-    conn = pymssql.connect(server="localhost",
-                           port=51829,
+    conn = pymssql.connect(server="host.docker.internal:1433",
                            user='DZIANIS_PRAKHODSKI',
                            password='19eo53Q11111',
                            database='TRN')
