@@ -39,7 +39,7 @@ pipeline {
             steps {
                 dir('git_repo') {
                     sh '''
-                        git push origin main:release
+                        git push origin release
                     '''
                 }
             }
