@@ -1,2 +1,3 @@
-import pymssql
-import pytest
+pymssql
+pytest
+junitxml
