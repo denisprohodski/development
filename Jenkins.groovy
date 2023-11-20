@@ -38,6 +38,7 @@ pipeline {
         stage('Push to Release Branch') {
             steps {
                 dir('git_repo') {
+                    sh 'git branch'
                     sh '''
                         git push origin release
                     '''
