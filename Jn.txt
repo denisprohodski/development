@@ -8,12 +8,13 @@ pipeline {
             }
         }
 
-        stage('Run Python Script') {
+        stage('Build and Run Python Script') {
             steps {
                 script {
                     sh 'pip install -r requirements.txt'
+                }
 
-
+                script {
                     sh 'python test_cases.py'
                 }
             }
