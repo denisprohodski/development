@@ -4,13 +4,13 @@ import pytest
 
 @pytest.fixture(scope='session')  # Please verify database credentials
 def db_conn():
-    conn = pymssql.connect(server="host.docker.internal:1433",
-                           user='DZIANIS_PRAKHODSKI',
-                           password='19eo53Q11111',
-                           database='TRN')
-    return conn
-
-
+    server = 'host.docker.internal:1433'
+    user = 'DZIANIS_PRAKHODSKI'
+    password = '19eo53Q11111'
+    db_name = 'TRN'
+    with pymssql.connect(server, user, password, db_name) as conn:
+        yield conn
+        
 def test_1_sum_of_column_values(db_conn):
     """" Test Case #1: [hr].[regions] table has sum of region_id column values as expected """
     cursor = db_conn.cursor()
