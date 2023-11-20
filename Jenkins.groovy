@@ -5,7 +5,7 @@ pipeline {
             steps {
                 // clone the repository to a local folder
                 dir('git_repo') {
-                    git(url: 'git@github.com:denisprohodski/development.git', branch: 'main')
+                    git(url: 'https://github.com/denisprohodski/development.git', branch: 'main')
                 }
             }
         }
